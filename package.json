@@ -1,0 +1,28 @@
+{
+  "name": "xavkunov.front",
+  "version": "0.0.1",
+  "description": "Front-end part of xavkunov.ru",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx webpack --mode development",
+    "build": "npx webpack --mode production"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.56.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/someSOAP/xavkunov.front.git"
+  },
+  "author": "someSOAP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/someSOAP/xavkunov.front/issues"
+  },
+  "homepage": "https://github.com/someSOAP/xavkunov.front#readme"
+}
