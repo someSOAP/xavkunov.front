@@ -4,8 +4,11 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 const config = {
     context: path.resolve(__dirname, 'src'),
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.jpeg']
+    },
     entry: {
-        main: './index.js',
+        main: './index.ts',
     },
     output: {
         filename: "[name].[contenthash].js",
@@ -40,7 +43,17 @@ const config = {
             {
                 test: /\.(png|jpeg|svg|gif)$/,
                 use: ['file-loader']
-            }
+            },
+            {
+                test: /\.(js|jsx|ts|tsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react']
+                    }
+                }
+            },
         ]
     }
 }
