@@ -5,7 +5,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const config = {
     context: path.resolve(__dirname, 'src'),
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.jpeg']
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
     entry: {
         main: './index.ts',

@@ -1,7 +1,7 @@
-import * as React from 'react'
-import photo from './assets/photo'
+import React, { FC } from 'react'
+import photo from './assets/photo.jpeg'
 
-const App: React.FC = () => {
+const App: FC = () => {
 
     return <div>
         <h1>Hello React!</h1>
