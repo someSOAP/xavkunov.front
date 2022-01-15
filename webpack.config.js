@@ -1,11 +1,13 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin')
 
 const config = {
     context: path.resolve(__dirname, 'src'),
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.sass', '.css'],
+        plugins: [new TsconfigPathsPlugin({})],
     },
     entry: {
         main: './index.ts',
@@ -39,6 +41,24 @@ const config = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                include: /\.module\.s[ac]ss$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: {
+                                mode: 'local',
+                                localIdentName: '[local]--[hash:base64:5]',
+                            },
+                        },
+                    },
+                    'sass-loader',
+                ],
             },
             {
                 test: /\.(png|jpeg|svg|gif)$/,

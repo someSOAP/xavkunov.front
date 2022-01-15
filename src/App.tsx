@@ -1,24 +1,13 @@
-import React, { FC } from 'react'
-import { useTranslation } from 'react-i18next'
-
-import photo from './assets/photo.jpeg'
-import dream from './assets/dream.jpeg'
+import React, { FC, Suspense } from 'react'
+import Main from './components/Main'
+import Header from '@/components/Header'
 
 const App: FC = () => {
-    const { t } = useTranslation()
-
     return (
-        <main>
-            <h1>{t('welcome')}</h1>
-            <figure>
-                <img src={photo} alt="photo of me" />
-                <figcaption>{t('me')}</figcaption>
-            </figure>
-            <figure>
-                <img src={dream} alt="photo of my dream" />
-                <figcaption>{t('dream')}</figcaption>
-            </figure>
-        </main>
+        <Suspense fallback={<div>Loading</div>}>
+            <Header />
+            <Main />
+        </Suspense>
     )
 }
 
