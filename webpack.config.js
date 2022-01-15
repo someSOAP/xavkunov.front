@@ -2,9 +2,31 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+const BUILD_FOLDER_NAME = 'dist'
+const STATIC_FOLDER_NAME = 'public'
 
 const config = {
     context: path.resolve(__dirname, 'src'),
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: './index.html',
+        }),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path
+                        .resolve(__dirname, STATIC_FOLDER_NAME)
+                        .replace(/\\/g, '/'),
+                    to: path
+                        .resolve(__dirname, BUILD_FOLDER_NAME)
+                        .replace(/\\/g, '/'),
+                },
+            ],
+        }),
+    ],
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.scss', '.sass', '.css'],
         plugins: [new TsconfigPathsPlugin({})],
@@ -14,7 +36,7 @@ const config = {
     },
     output: {
         filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, BUILD_FOLDER_NAME),
     },
     devServer: {
         watchFiles: {
@@ -24,18 +46,12 @@ const config = {
             },
         },
         static: {
-            directory: path.join(__dirname, 'public'),
+            directory: path.join(__dirname, STATIC_FOLDER_NAME),
             watch: true,
         },
         compress: true,
         port: 3000,
     },
-    plugins: [
-        new HTMLWebpackPlugin({
-            template: './index.html',
-        }),
-        new CleanWebpackPlugin(),
-    ],
     module: {
         rules: [
             {
