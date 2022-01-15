@@ -4099,6 +4099,14 @@ jpegtran-bin@^5.0.0:
     bin-wrapper "^4.0.0"
     logalot "^2.0.0"
 
+jpegtran-bin@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/jpegtran-bin/-/jpegtran-bin-6.0.1.tgz#9b86b8be0628c220cce40e7cb25d3541a8253459"
+  integrity sha512-WohhhHhqe22de7PU8hXs6Sr5d4BAvkrfA93NR5tGlHyPnFLgvEW/bH+q7fv65JgoiQDsd7SBwwQ/OGRBivU3Mw==
+  dependencies:
+    bin-build "^3.0.0"
+    bin-wrapper "^4.0.0"
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -4731,6 +4739,14 @@ optipng-bin@^7.0.0:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/optipng-bin/-/optipng-bin-7.0.1.tgz#beb8e55a52f8a26f885ee57ab44fcf62397d6972"
   integrity sha512-W99mpdW7Nt2PpFiaO+74pkht7KEqkXkeRomdWXfEz3SALZ6hns81y/pm1dsGZ6ItUIfchiNIP6ORDr1zETU1jA==
+  dependencies:
+    bin-build "^3.0.0"
+    bin-wrapper "^4.0.0"
+
+optipng-bin@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/optipng-bin/-/optipng-bin-8.1.0.tgz#9b6044afa0825c439f405cfc1be67a5d9aa90cfa"
+  integrity sha512-RZcT8AFfidQs5r2m8w3A7eh9Snag0TY0IwP7O+2ugCPnTuGQdQve/TBz1easnyvTVzzEwk8YJwbf2k05mcaEGQ==
   dependencies:
     bin-build "^3.0.0"
     bin-wrapper "^4.0.0"
