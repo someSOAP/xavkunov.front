@@ -1,14 +1,19 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
+
+import SocialBar from '@/components/SocialBar'
+
+import styles from './Header.module.scss'
 
 const Header: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <header>
+        <header className={styles.header}>
             <h1>{t('welcome')}</h1>
+            <SocialBar />
         </header>
     )
 }
 
-export default Header
+export default memo(Header)
