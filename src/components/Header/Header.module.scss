@@ -1,4 +1,15 @@
 .header {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.headerTitle {
+  flex: 1;
+  flex-shrink: 0;
+  flex-basis: 60%;
+}
+
+.headerButtons {
+  display: flex;
   flex-wrap: nowrap;
 }

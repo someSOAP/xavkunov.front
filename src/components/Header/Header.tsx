@@ -10,7 +10,7 @@ const Header: FC = () => {
 
     return (
         <header className={styles.header}>
-            <h1>{t('welcome')}</h1>
+            <h1 className={styles.headerTitle}>{t('welcome')}</h1>
             <SocialBar />
         </header>
     )

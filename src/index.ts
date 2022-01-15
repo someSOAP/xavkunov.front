@@ -1,7 +1,8 @@
 import { createElement } from 'react'
 import { render } from 'react-dom'
-import './i18n'
+
 import App from './App'
-import './styles/styles.css'
+import './i18n'
+import './styles.css'
 
 render(createElement(App), document.querySelector('#root'))

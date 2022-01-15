@@ -9,7 +9,7 @@ const Main: FC = () => {
     const { t } = useTranslation()
 
     return (
-        <main>
+        <main className={styles.mainWrapper}>
             <figure>
                 <div className={styles.avaWrapper}>
                     <img className={styles.ava} src={ava} alt="photo of me" />
