@@ -1,9 +1,12 @@
 .header {
+  padding: max(10px, 1vh) 1vw;
   display: flex;
   flex-wrap: wrap;
 }
 
 .headerTitle {
+  padding: 0 2vmin;
+  margin: max(10px, 1vh) 0;
   flex: 1;
   flex-shrink: 0;
   flex-basis: 60%;

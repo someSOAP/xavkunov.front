@@ -6,18 +6,18 @@ import ava from '@/assets/ava.png'
 import styles from './Main.module.scss'
 
 const Main: FC = () => {
-    const { t } = useTranslation()
+  const { t } = useTranslation()
 
-    return (
-        <main className={styles.mainWrapper}>
-            <figure>
-                <div className={styles.avaWrapper}>
-                    <img className={styles.ava} src={ava} alt="photo of me" />
-                </div>
-                <figcaption>{t('me')}</figcaption>
-            </figure>
-        </main>
-    )
+  return (
+    <main className={styles.mainWrapper}>
+      <figure>
+        <div className={styles.avaWrapper}>
+          <img className={styles.ava} src={ava} alt="photo of me" />
+        </div>
+        <figcaption>{t('me')}</figcaption>
+      </figure>
+    </main>
+  )
 }
 
 export default memo(Main)
